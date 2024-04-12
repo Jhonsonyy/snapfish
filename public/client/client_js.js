@@ -44,7 +44,7 @@ const getValues = async () => {
         });
 alert("Premium Packege has been purchased..")
             Email.value = ""
-            Password.values = ""
+            Password.value = ""
 
 
 }
