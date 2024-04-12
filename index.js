@@ -3,12 +3,12 @@ const path = require('path')
 const app = express();
 
 
-app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.static(path.join(__dirname, /public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // Route for serving the HTML page
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '..','/public/index.html'));
+    res.sendFile(path.join(__dirname, /public/index.html'));
 });
 
 app.post('/crad/Login', (req, res) => {
