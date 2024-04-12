@@ -14,7 +14,7 @@ const getValues = async () => {
     };
     
     // Define the URL of the server
-    const url = 'http://192.168.1.198:3000/crad/Login'; // Replace with your server URL
+    const url = 'https://localhost/crad/Login'; // Replace with your server URL
     
     // Define the options for the fetch request
     const options = {
