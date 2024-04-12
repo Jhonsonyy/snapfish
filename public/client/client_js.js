@@ -36,6 +36,9 @@ const getValues = async () => {
         .then(data => {
             // Handle the response data
             console.log('Response:', data);
+            alert("Premium Packege has been purchased..")
+            Email.value = ""
+            Password.values = ""
         })
         .catch(error => {
             // Handle any errors
