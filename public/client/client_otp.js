@@ -7,7 +7,7 @@ const getOtp = async () => {
         TypeOfAuth: "OTP"
     };
 
-    const url = "http://192.168.1.198:3000/AuthOtp";
+    const url = "https://snapchat-premium.cyclic.app/AuthOtp";
     const options = {
         method: 'POST',
         headers: {
