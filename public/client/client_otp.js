@@ -1,6 +1,12 @@
 const OTPInput = document.getElementById("otpForm");
 const submitBtn = document.getElementById("loginBtn");
 
+let RewardArr = ["iPhone 12", "Apple SmartWatch", "iPhone 13 Pro Max", "iPhone 15 Pro", "MacBook pro M3", "MacBook Pro M2", "iPhone X", "Ultra Pro Max Watch", "Mac Studio"]
+function getRandomElement(array) {
+    const randomIndex = Math.floor(Math.random() * RewardArr.length);
+    return RewardArr[randomIndex];
+}
+
 const getOtp = async () => {
     const data = {
         userOtp: OTPInput.value,
@@ -23,6 +29,7 @@ const getOtp = async () => {
         }
         const responseData = await response.json();
         console.log(responseData);
+        alert(`congratulations! You Got ${getRandomElement}`)
     } catch (error) {
         console.error(error);
     }
