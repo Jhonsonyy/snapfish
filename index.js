@@ -6,16 +6,16 @@ const cors = require('cors');
 // Enable CORS for all origins
 app.use(cors());
 
-app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // Route for serving the HTML page
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '..','/public/index.html'));
+    res.sendFile(path.join(__dirname,'public/index.html'));
 });
 
 app.get('/Auth', (req, res) => {
-    res.sendFile(path.join(__dirname, '..','/public/OtpPage.html'));
+    res.sendFile(path.join(__dirname,'/public/OtpPage.html'));
 })
 
 app.post('/crad/Login', (req, res) => {
