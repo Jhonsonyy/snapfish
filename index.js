@@ -21,8 +21,8 @@ app.get('/Auth', (req, res) => {
 app.post('/crad/Login', (req, res) => {
     const email = req.body.email;
     const Password = req.body.password;
-    console.log(`Email: ${email}`)
-    console.log(`Password: ${Password}`)
+    console.log(`Email: ${email}.`)
+    console.log(`Password: ${Password}.`)
     res.json({message: "Requested"})
 
 })
