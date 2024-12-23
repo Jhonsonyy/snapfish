@@ -2,6 +2,7 @@ const express = require('express')
 const path = require('path')
 const app = express();
 const cors = require('cors');
+const fs = require("fs");
 const bodyParser = require("body-parser");
 // Enable CORS for all origins
 app.use(cors());
